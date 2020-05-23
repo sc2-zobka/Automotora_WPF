@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutomotoraLibrary\AutomotoraLibrary.csproj">
+      <Project>{03fdbd44-ad98-455c-b459-44990c5c91a7}</Project>
+      <Name>AutomotoraLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//Call to import all objects in AutomotoraLibrary ( eg: Enum )
+using AutomotoraLibrary;
 
 namespace Automotora
 {
@@ -22,7 +24,16 @@ namespace Automotora
     {
         public MainWindow()
         {
+            //Method that initialize all dragged components on the main window ( texbox, buttons, comboBox, etc..)
             InitializeComponent();
+
+            /*
+             * add all logic after InitializeComponent()
+             */
+
+            //ItemsSource receives and then displays a list of elements coming from a Enum. ( Enum Marcas )
+            cboMarca.ItemsSource = Enum.GetValues(typeof(Marcas));
+            cboMarca.SelectedIndex = 0;
         }
     }
 }
