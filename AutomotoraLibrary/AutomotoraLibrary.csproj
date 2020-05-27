@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomotoraCollection.cs" />
+    <Compile Include="Automovil.cs" />
     <Compile Include="Enumeradores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
