@@ -22,6 +22,11 @@ namespace Automotora
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private AutomotoraCollection _coleccion = new AutomotoraCollection();
+
+
+
         public MainWindow()
         {
             //Method that initialize all dragged components on the main window ( texbox, buttons, comboBox, etc..)
@@ -34,6 +39,11 @@ namespace Automotora
             //ItemsSource receives and then displays a list of elements coming from a Enum. ( Enum Marcas )
             cboMarca.ItemsSource = Enum.GetValues(typeof(Marcas));
             cboMarca.SelectedIndex = 0;
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            //add logica para recolectar los datos ingresados en el formulario
         }
     }
 }
