@@ -32,10 +32,10 @@
         <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="64,370,0,0" VerticalAlignment="Top" Width="75"/>
 
         <!--Retrieve car information filtered by license plate, then autofill the rest of the fields-->
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="316,91,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="316,91,0,0" VerticalAlignment="Top" Width="75" Click="btnBuscar_Click"/>
         
         <!--Show information based on car(s) registered-->
-        <DataGrid x:Name="dgAutomoviles" HorizontalAlignment="Left" Height="156" Margin="443,91,0,0" VerticalAlignment="Top" Width="319"/>
+        <DataGrid x:Name="dgAutomoviles" HorizontalAlignment="Left" Height="156" Margin="443,91,0,0" VerticalAlignment="Top" Width="319" IsReadOnly="True"/>
 
 
         <!--test comment-->
