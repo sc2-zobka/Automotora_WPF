@@ -44,7 +44,7 @@ namespace Automotora
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
             //Fase 1
-            //Recolectar los datos ingresados en el formulario
+            //Fetch all data from the fields in the form view (MainW Window)
 
             string patente = txtPatente.Text;
 
@@ -115,13 +115,11 @@ namespace Automotora
 
             
         }
-
         private void CargarGrilla()
         {
             dgAutomoviles.ItemsSource = null;
             dgAutomoviles.ItemsSource = _coleccion.automoviles;
         }
-
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             string patente = txtPatente.Text;
@@ -134,15 +132,36 @@ namespace Automotora
                 return;
             }
 
+            //if not empty then: 
             Automovil auto = _coleccion.BuscarAutomovil(patente);
             
+            //if car doesn't exist in the collection, then:
             if(auto == null)
             {
                 MessageBox.Show("No se ha encontrado la patente");
                 return;
             }
 
-            //WIP
+            //if car exists in the collection, then we pass car's attributes
+            //to the form fields (MainWindows)
+
+            cboMarca.SelectedIndex = (int)auto.Marca;
+            txtModelo.Text = auto.Modelo;
+            txtAnio.Text = auto.Anio.ToString();
+            chkNuevo.IsChecked = auto.Nuevo;
+
+            if(auto.Transmision == Transmisiones.Automatica)
+            {
+                rbtAutomatica.IsChecked = true;
+            }
+            else
+            {
+                rbtMecanica.IsChecked = true;
+            }
+
+
+
+
         }
     }
 }
