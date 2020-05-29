@@ -57,6 +57,15 @@ namespace AutomotoraLibrary
             this.automoviles.Remove(auto);
             return true;
         }
-            
+        //Metodo que retorna un List<Automovil> que dentro trae un automovil 
+        public List<Automovil> BuscarPorPatente(string patente)
+        {
+            //Consult LINQ
+            //ToList() makes the LINQ Query to return a List<>
+            List<Automovil> automoviles = (from a in this.automoviles
+                                           where a.Patente.ToLower().Contains(patente)
+                                           select a).ToList();
+            return automoviles;
+        }
     }
 }

@@ -249,5 +249,12 @@ namespace Automotora
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnListar_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoAutomoviles listado = new ListadoAutomoviles(this._coleccion);
+            listado.Show();
+
+        }
     }
 }
