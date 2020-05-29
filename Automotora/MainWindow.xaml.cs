@@ -159,8 +159,27 @@ namespace Automotora
                 rbtMecanica.IsChecked = true;
             }
 
+        }
 
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            string patente = txtPatente.Text;
 
+            if(patente.Trim() == "")
+            {
+                MessageBox.Show("Debe ingresar una patente");
+                return;
+            }
+
+            if(_coleccion.EliminarAutomovil(patente))
+            {
+                MessageBox.Show("Automovil ha sido eliminado");
+                CargarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado la patente");
+            }
 
         }
     }
