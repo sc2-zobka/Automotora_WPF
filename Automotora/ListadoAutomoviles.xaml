@@ -6,10 +6,14 @@
         xmlns:local="clr-namespace:Automotora"
         mc:Ignorable="d"
         Title="Listado automoviles" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="btnFiltrar">
         <DataGrid x:Name="dgAutomoviles" HorizontalAlignment="Left" Height="242" Margin="78,108,0,0" VerticalAlignment="Top" Width="625" IsReadOnly="True"/>
-        <Label x:Name="lblPatente" Content="Patente" HorizontalAlignment="Left" Margin="78,42,0,0" VerticalAlignment="Top" Height="31" Width="57" FontWeight="Bold"/>
+        <Label x:Name="lblPatente" Content="Patente" HorizontalAlignment="Left" Margin="78,44,0,0" VerticalAlignment="Top" Height="31" Width="57" FontWeight="Bold"/>
         <TextBox x:Name="txtPatente" HorizontalAlignment="Left" Height="23" Margin="151,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtPatente_KeyUp"/>
+        <Label x:Name="lvlMarca" Content="Marca" HorizontalAlignment="Left" Margin="313,44,0,0" VerticalAlignment="Top" Width="62" FontWeight="Bold"/>
+        <ComboBox x:Name="cboMarca" HorizontalAlignment="Left" Margin="375,46,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="cboFiltrar" Content="Filtrar" HorizontalAlignment="Left" Margin="520,48,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" Click="cboFiltrar_Click"/>
+        <Button x:Name="btnRefrescar" Content="Refrescar" HorizontalAlignment="Left" Margin="628,48,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" Click="btnRefrescar_Click"/>
 
     </Grid>
 </Window>

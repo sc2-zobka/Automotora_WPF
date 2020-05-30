@@ -67,5 +67,14 @@ namespace AutomotoraLibrary
                                            select a).ToList();
             return automoviles;
         }
+        //Add filter Method to cboMarca. Method will fetch only selected car's brand and show them on the DataGrid.
+        public List<Automovil> BuscarPorMarca(Marcas marca)
+        {
+            //"Select a" similar to SQL, returns all fields of the form. (Since <a> stand for a car object) 
+            List<Automovil> automoviles = (from a in this.automoviles
+                                           where a.Marca == marca
+                                           select a).ToList();
+            return automoviles;
+        }
     }
 }

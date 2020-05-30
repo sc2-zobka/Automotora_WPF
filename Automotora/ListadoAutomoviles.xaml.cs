@@ -40,11 +40,14 @@ namespace Automotora
             this.Coleccion = coleccion;
             InitializeComponent();
             dgAutomoviles.ItemsSource = this.Coleccion.automoviles;
+
+            //Load cboMarca
+            cboMarca.ItemsSource = Enum.GetValues(typeof(Marcas));
         }
 
         private void txtPatente_KeyUp(object sender, KeyEventArgs e)
         {
-            //Fetch a plate into patente (from xaml layer)
+            //Fetch a plate (from xaml layer)
             string patente = txtPatente.Text;
 
             //Fetch a car into automoviles. Car is already filtered by LINQ Query inside BuscarPorPatente()
@@ -55,6 +58,24 @@ namespace Automotora
             
             //Fetch collection in order to show it on datagrid.
             dgAutomoviles.ItemsSource = automoviles;
+        }
+
+        private void cboFiltrar_Click(object sender, RoutedEventArgs e)
+        {
+            //Fetch a brand of car (from xaml layer)
+            Marcas marca = (Marcas)cboMarca.SelectedIndex;
+
+            //Fetch a car into automoviles. Car is already filtered by LINQ Query inside BuscarPorMarca()
+            List<Automovil> automoviles = this.Coleccion.BuscarPorMarca(marca);
+
+            dgAutomoviles.ItemsSource = null;
+            dgAutomoviles.ItemsSource = automoviles;
+        }
+
+        private void btnRefrescar_Click(object sender, RoutedEventArgs e)
+        {
+            dgAutomoviles.ItemsSource = null;
+            dgAutomoviles.ItemsSource = this.Coleccion.automoviles;
         }
     }
 }
