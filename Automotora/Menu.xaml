@@ -1,4 +1,6 @@
-﻿<Window x:Class="Automotora.Menu"
+﻿<Controls:MetroWindow x:Class="Automotora.Menu"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"              
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +8,30 @@
         xmlns:local="clr-namespace:Automotora"
         mc:Ignorable="d"
         Title="Menu" Height="450" Width="800">
+    <Controls:MetroWindow.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="Azure" Offset="1"/>
+            <GradientStop Color="#5A67D8" Offset="0.107"/>
+        </LinearGradientBrush>
+    </Controls:MetroWindow.Background>
     <Grid>
-        
+        <Controls:Tile Height="150" Width="150" Background="#A3BFFA" Margin="23,41,620.846,229.923" Click="Tile_Click">
+            <Grid Height="150" Width="150">
+                <iconPacks:PackIconMaterial Kind="Car" Height="80" Width="80" VerticalAlignment ="Center" HorizontalAlignment="Center"></iconPacks:PackIconMaterial>
+                <Label x:Name="lblGestionAuto" Content="Gestion Automoviles" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontWeight="Bold"/>
+            </Grid>
+        </Controls:Tile>
+        <Controls:Tile Height="150" Width="150" Background="#A3BFFA" Margin="206,41,437.846,229.923" Click="Tile_Click_1">
+            <Grid Height="150" Width="150">
+                <iconPacks:PackIconMaterial Kind="ClipboardListOutline" Height="80" Width="80" VerticalAlignment ="Center" HorizontalAlignment="Center"/>
+                <Label x:Name="lblGestionAuto1" Content="Listado Automoviles" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontWeight="Bold"/>
+            </Grid>
+        </Controls:Tile>
+        <Controls:Tile Height="150" Width="150" Background="#A3BFFA" Margin="616,244,27.846,26.923" Click="Tile_Click_2">
+            <Grid Height="150" Width="150">
+                <iconPacks:PackIconMaterial Kind="ExitToApp" Height="80" Width="80" VerticalAlignment ="Center" HorizontalAlignment="Center"/>
+                <Label x:Name="lblGestionAuto2" Content="Salir" Foreground="White" HorizontalAlignment="Center"  VerticalAlignment="Bottom" FontWeight="Bold"/>
+            </Grid>
+        </Controls:Tile>
     </Grid>
-</Window>
+</Controls:MetroWindow>
