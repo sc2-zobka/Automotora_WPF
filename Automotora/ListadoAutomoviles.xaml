@@ -1,11 +1,12 @@
-﻿<Window x:Class="Automotora.ListadoAutomoviles"
+﻿<Controls:MetroWindow x:Class="Automotora.ListadoAutomoviles"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Automotora"
         mc:Ignorable="d"
-        Title="Listado automoviles" Height="450" Width="800">
+        Title="Listado automoviles" Height="450" Width="800" FontWeight="Bold">
     <Grid x:Name="btnFiltrar">
         <DataGrid x:Name="dgAutomoviles" HorizontalAlignment="Left" Height="242" Margin="78,108,0,0" VerticalAlignment="Top" Width="625" IsReadOnly="True"/>
         <Label x:Name="lblPatente" Content="Patente" HorizontalAlignment="Left" Margin="78,44,0,0" VerticalAlignment="Top" Height="31" Width="57" FontWeight="Bold"/>
@@ -16,4 +17,4 @@
         <Button x:Name="btnRefrescar" Content="Refrescar" HorizontalAlignment="Left" Margin="628,48,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" Click="btnRefrescar_Click"/>
 
     </Grid>
-</Window>
+</Controls:MetroWindow>

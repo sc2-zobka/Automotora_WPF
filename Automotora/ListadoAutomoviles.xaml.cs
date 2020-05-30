@@ -18,8 +18,25 @@ namespace Automotora
     /// <summary>
     /// Lógica de interacción para ListadoAutomoviles.xaml
     /// </summary>
-    public partial class ListadoAutomoviles : Window
+    public partial class ListadoAutomoviles
     {
+        /*
+        private static ListadoAutomoviles instance;
+
+        public static ListadoAutomoviles Instance
+        {
+            get 
+            {
+            if(instance == null)
+                {
+                    instance = new ListadoAutomoviles();
+                }
+             return instance;
+            }
+           
+        }
+        */
+
         private AutomotoraCollection _coleccion;
 
         public AutomotoraCollection Coleccion

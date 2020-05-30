@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//Call to import all objects in AutomotoraLibrary ( eg: Enum )
+//Call to import all objects of AutomotoraLibrary ( eg: Enum )
 using AutomotoraLibrary;
 
 namespace Automotora
@@ -20,7 +20,7 @@ namespace Automotora
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
 
         private AutomotoraCollection _coleccion = new AutomotoraCollection();
@@ -252,9 +252,15 @@ namespace Automotora
 
         private void btnListar_Click(object sender, RoutedEventArgs e)
         {
+
             ListadoAutomoviles listado = new ListadoAutomoviles(this._coleccion);
             listado.Show();
-
+            listado.Focus();
+            /*
+            ListadoAutomoviles.Instance.Show();
+            ListadoAutomoviles.Instance.Coleccion = this._coleccion;
+            ListadoAutomoviles.Instance.Focus();
+            */
         }
     }
 }
