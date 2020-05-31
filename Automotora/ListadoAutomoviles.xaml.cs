@@ -56,7 +56,10 @@ namespace Automotora
         {
             this.Coleccion = coleccion;
             InitializeComponent();
-            dgAutomoviles.ItemsSource = this.Coleccion.automoviles;
+            //dgAutomoviles.ItemsSource = this.Coleccion.automoviles;
+            
+            //////////////Testing EntityFramwork/////////////////
+            dgAutomoviles.ItemsSource = this.Coleccion.ListarTodo();
 
             //Load cboMarca
             cboMarca.ItemsSource = Enum.GetValues(typeof(Marcas));

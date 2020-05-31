@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//Importar DALC
+using DALC;
 
 namespace AutomotoraLibrary
 {
@@ -10,6 +12,16 @@ namespace AutomotoraLibrary
     //Collection Class which will store cars
     public class AutomotoraCollection
     {
+        //Gateway to the database. Object <db> instanced allows to manupulate the database (eg: Query, Insert, etc...)
+        public AutomotoraDBEntities db = new AutomotoraDBEntities();
+        
+        ////////Test method to check if EntityFramework is working right//////
+        public IEnumerable<Object> ListarTodo()
+        {
+            return db.Automoviles.ToList();
+        }
+        ///////////////////////////////////////////////////////////////////////
+
         //List var of "Automovil" type to store all car instanced.
         public List<Automovil> automoviles = new List<Automovil>();
 
